@@ -1,8 +1,26 @@
 <h1>Events</h1>
 
 Listing generated at <%= Time.now %>. There are currently <%= @events.size %> events.
-<ul>
-	<% @events.each do |event| %>
-	<li><strong><%= event.name %></strong> at <%= event.location %>: <%= number_to_currency(event.price) %></li>
-	<% end %>
-</ul>
+
+<% @events.each do |event| %>
+<article>
+	<header>
+		<h2><%= event.name %></h2>
+	</header>
+	<p><%= event.description %></p>
+	<table>
+		<tr>
+			<th>Date</th>
+			<td><%= event.starts_at %></td>
+		</tr>
+		<tr>
+			<th>Location</th>
+			<td><%= event.location %></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td><%= number_to_currency(event.price) %></td>
+		</tr>
+	</table>
+</article>
+<% end %>
