@@ -1,6 +1,6 @@
 <h1>Event Listing</h1>
 
-This listing generated at <%= Time.now %>. There are currently <%= pluralize(@events.size, 'event') %>.
+This listing is generated on <%= Time.now %>. There are currently <%= pluralize(@events.size, 'event') %>.
 
 <% @events.each do |event| %>
 <article>
@@ -11,7 +11,7 @@ This listing generated at <%= Time.now %>. There are currently <%= pluralize(@ev
 	<table>
 		<tr>
 			<th>Date</th>
-			<td><%= event.starts_at.to_s(:Default) %></td>
+			<td><%= event.starts_at %></td>
 		</tr>
 		<tr>
 			<th>Location</th>
