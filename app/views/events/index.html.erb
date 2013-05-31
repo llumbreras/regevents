@@ -19,7 +19,7 @@ This listing generated at <%= Time.now %>. There are currently <%= pluralize(@ev
 		</tr>
 		<tr>
 			<th>Price</th>
-			<td><%= number_to_currency(event.price) %></td>
+			<td><%= format_price(event) %></td>
 		</tr>
 	</table>
 </article>
