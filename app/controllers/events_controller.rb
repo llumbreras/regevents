@@ -16,4 +16,7 @@ class EventsController < ApplicationController
 		@event.update(event_params)
 		redirect_to event_path(@event)
 	end
+	def new
+		@event = Event.new
+	end
 end
