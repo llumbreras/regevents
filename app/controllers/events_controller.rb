@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
 	def index
-		@events = Event.where("starts_at >= ?", Time.now)
+		@events = Event.upcoming
 	end
 	def show
 		@event = Event.find(params[:id])
