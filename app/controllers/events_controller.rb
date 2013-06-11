@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
 	def index
-		@events = Event.all
+		@events = Event.where("starts_at >= ?", Time.now)
 	end
 	def show
 		@event = Event.find(params[:id])
@@ -21,6 +21,12 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 		@event.save
 		redirect_to event_path(@event)
+	end
+
+	def destroy
+		@event = Event.find(params[:id])
+		@event.destroy
+		redirect_to events_path
 	end
 
 	private 

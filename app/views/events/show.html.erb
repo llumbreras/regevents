@@ -22,5 +22,5 @@
 </article>
 <div>
 	<%= link_to 'All Events', events_path %> | 
-	<%= link_to 'Edit Event', edit_event_path %>
+	<%= link_to 'Edit Event', edit_event_path %> | <%= link_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: 'Are you sure?'} %>
 </div>
