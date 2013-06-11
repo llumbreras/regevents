@@ -2,7 +2,9 @@
 
 <article>
 	<header>
+		<%= image_helper(@event) %>
 		<h2><%= @event.name %></h2>
+		<%= pluralize(@event.capacity, 'spot') %>
 	</header>
 	<p><%= truncate(@event.description, length: 25, separator: ' ') %></p>
 	<table>
