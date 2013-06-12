@@ -2,7 +2,6 @@
 
 This listing is generated on <%= Time.now %>. There are currently <%= pluralize(@events.size, 'event') %>.
 
-<h3><%= link_to "Add New Event", new_event_path %></h3>
 
 <% @events.each do |event| %>
 <article>

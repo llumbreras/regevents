@@ -28,7 +28,7 @@
 	<%= f.label :price %><br />
 	<%= f.number_field :price %>
 </p>
-<%= f.submit %>
+<%= f.submit "Create Event", class:"btn" %> <%= link_to "Cancel", events_path, class:"btn" %>
 
 <% end %>
 
