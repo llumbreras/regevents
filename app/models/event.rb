@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 		validates :price, numericality: { greater_than_or_equal_to: 0 }
 		validates :capacity, numericality: { only_integer: true, greater_than: 0}
 		validates :image_file_name, allow_blank: true, format: {
-			with: /\W+.(gif|jpg|png)\z/i,
+			with: /\w+.(gif|jpg|png)\z/i,
 			message: "must be of .gif, .jpg, or .png type"
 		}
 
