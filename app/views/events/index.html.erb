@@ -1,7 +1,10 @@
 <h1>Event Listing</h1>
 
+<% if flash[:alert] %>
+Action taken:<%= flash[:alert] %>
+<% end %>
+<br />
 This listing is generated on <%= Time.now %>. There are currently <%= pluralize(@events.size, 'event') %>.
-
 
 <% @events.each do |event| %>
 <article>
