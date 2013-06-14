@@ -1,16 +1,7 @@
 <div>
 <%= form_for(@event) do |f| %>
-<div>
-	<% if @event.errors.any? %>
-	Please check this out: 
-	<%= pluralize(@event.errors.count, 'error') %><br /><br />
-	<% @event.errors.full_messages.each do |event_errors| %>
-	<ul>
-	<li><%= event_errors %></li>
-	</ul>
-	<% end %>
-	<% end %>
-</div><br />
+<%= render 'shared/errors' %>
+<br />
 <p><%= f.label :name %><br />
 	<%= f.text_field :name, autofocus: true %>
 </p>
