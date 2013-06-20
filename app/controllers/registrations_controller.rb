@@ -7,4 +7,8 @@ class RegistrationsController < ApplicationController
 		@event = Event.find(params[:event_id])
 		@registration = @event.registrations.find(params[:id])
 	end
+	def new
+		@event = Event.find(params[:event_id])
+		@registration = @event.registrations.new
+	end
 end
