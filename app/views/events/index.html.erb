@@ -11,7 +11,7 @@ This listing is generated on <%= Time.now %>. There are currently <%= pluralize(
 	<header>
 		<%= image_helper(event) %>
 		<h2><%= link_to event.name, event_path(event) %></h2>
-		<h3><%= pluralize(event.capacity, "spot") %></h3>
+		<h3><%= pluralize(event.spaces_left, "space") %></h3>
 	</header>
 	<p><%= truncate(event.description, length: 25, separator: ' ') %></p>
 	<table>

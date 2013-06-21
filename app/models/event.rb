@@ -34,4 +34,8 @@ class Event < ActiveRecord::Base
 	def self.upcoming
 		where("starts_at >= ?", Time.now).order("starts_at")
 	end
+
+	def spaces_left
+		capacity - registrations.size
+	end
 end

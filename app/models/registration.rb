@@ -9,4 +9,5 @@ class Registration < ActiveRecord::Base
   	'other']
   validates :info_source,
   	inclusion: { in: INFO_SOURCE_OPTIONS }
+
 end

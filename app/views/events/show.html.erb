@@ -8,7 +8,7 @@
 	<header>
 		<%= image_helper(@event) %>
 		<h2><%= @event.name %></h2>
-		<%= pluralize(@event.capacity, 'spot') %>
+		<%= pluralize(@event.spaces_left, 'space') %>
 	</header>
 	<p><%= truncate(@event.description, length: 25, separator: ' ') %></p>
 	<table>
@@ -27,5 +27,7 @@
 	</table>
 </article>
 <div>
-	<%= link_to 'Edit Event', edit_event_path, class:"btn btn-info" %>  <%= link_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn" %>
+	<%= link_to "Edit Event", edit_event_path(@event) %> | <%= link_to "Back to Index", events_path %>
+<div>
+	<%= link_to 'Register for the Event', new_event_registration_path(@event), class:"btn btn-info" %> 
 </div>
