@@ -6,6 +6,6 @@
 	<li><%= f.label :email %>
 	<%= f.text_field :email %></li>
 	<li><%= f.label :info_source %>
-	<%= f.text_field :info_source %></li>
-	<%= f.submit "Save Registration" %>
+	<%= f.select :info_source, Registration::INFO_SOURCE_OPTIONS, prompt: "Choose one" %></li>
+	<%= f.submit "Save Registration", class:"btn btn-primary" %>  <%= link_to "Cancel", event_path(@event), class:"btn btn-danger" %>
 <% end %>
