@@ -17,7 +17,7 @@ class RegistrationsController < ApplicationController
 		if @registration.save
 			redirect_to event_registrations_path(@event), notice: "Success!"
 		else
-			fail
+			render :new
 		end
 	end
 
